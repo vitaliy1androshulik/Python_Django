@@ -5,4 +5,5 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     body = models.TextField()
     slug = models.SlugField()
+    img = models.ImageField(default="default.jpg", blank=True)
     date = models.DateTimeField(auto_now_add=True)

@@ -4,7 +4,10 @@
 {% endblock%}
 {% block content%}
 <div class="container">
-    <h1>Список новин</h1>
+    <h1>ГОЛОВНІ НОВИНИ</h1>
+    {%for post in post1%} 
+    <h1>{{post.title}}</h1>
+    {%endfor%}
     <a href="/contact">Контакти</a>
 </div>
 {% endblock%}
