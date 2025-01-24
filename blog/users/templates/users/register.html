@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{%load widget_tweaks%}
+
+{% block title %}
+    Реєстрація
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="text-center">Реєстрація на сайті</h1>
+        <form class="offset-md-3 col-md-6" method="POST">
+            {%csrf_token%}
+            <div class="mb-3">
+              <label for="id_username" class="form-label">Ім'я користувача</label>
+              {{form.username|add_class:"form-control"}}
+
+            <div class="mb-3">
+              <label for="id_email" class="form-label">Електронна пошта</label>
+              {{form.email|add_class:"form-control"}}
+            </div>
+
+            <div class="mb-3">
+              <label for="id_last_name" class="form-label">Прізвище</label>
+              {{form.last_name|add_class:"form-control"}}
+            </div>
+
+            <div class="mb-3">
+              <label for="id_first_name" class="form-label">Ім'я</label>
+              {{form.first_name|add_class:"form-control"}}
+            </div>
+
+            <div class="mb-3">
+              <label for="id_password1" class="form-label">Пароль</label>
+              {{form.password1|add_class:"form-control"}}
+            </div>
+            
+            <div class="mb-3">
+                <label for="id_password2" class="form-label">Підтвердження пароля</label>
+                {{form.password2|add_class:"form-control"}}
+            </div>
+
+            <button type="submit" class="btn btn-primary">Реєстрація</button>
+          </form>
+    </div>
+{% endblock %}

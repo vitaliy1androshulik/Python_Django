@@ -36,7 +36,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'posts'
+    'posts',
+    'users',
+    'widget_tweaks'
 ]
 
 MIDDLEWARE = [
@@ -73,8 +75,7 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases  
 
-#MEDIA_URL = '/media/'  # URL для доступу до медіафайлів
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Директорія для зберігання медіафайлів
+
 
 #DATABASES = {
 #    'default': {
@@ -85,11 +86,11 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # MariaDB uses the MySQL backend
-        'NAME': 'pyMariaDB',          # Replace with your database name
-        'USER': 'root',               # Replace with your MariaDB username
-        'PASSWORD': '200724532limek',           # Replace with your MariaDB password
-        'HOST': 'localhost',                   # Replace with your database host (e.g., 127.0.0.1)
-        'PORT': '3306',                        # Default MariaDB port
+        'NAME': 'DjangoDB_efforthour',          # Replace with your database name
+        'USER': 'DjangoDB_efforthour',               # Replace with your MariaDB username
+        'PASSWORD': '0435ec9164dd4f6511809702cd74501ac9a779fe',           # Replace with your MariaDB password
+        'HOST': 'e1nj3.h.filess.io',                   # Replace with your database host (e.g., 127.0.0.1)
+        'PORT': '3305',                        # Default MariaDB port
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"  # Optional, ensures strict SQL mode
         },
@@ -134,6 +135,8 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+MEDIA_URL = 'media/'  # URL для доступу до медіафайлів
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Директорія для зберігання медіафайлів
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 

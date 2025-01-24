@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block title%}
+Новини
+{% endblock%}
+{% block content%}
+<div class="container">
+  <h1 class="text-center">Список новин</h1>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+{%for x in post1%}
+      <div class="col">
+        <div class="card h-100">
+            <img src="/media/{{x.img }}" class="card-img-top" >
+            <div class="card-body">
+                <h5 class="card-title">{{ x.title }}</h5>
+                <p class="card-text">{{ x.content }}</p>
+                <p class="card-text"><small class="text-muted">{{ x.created_at }}</small></p>
+                <p class="card-text"><small class="text-muted">Автор: {{ x.created_by.first_name }} {{ x.created_by.last_name }}</small></p>
+                <a href="details/{{ x.id }}" class="btn btn-primary">Детальніше</a>
+            </div>
+        </div>
+      </div>
+{%endfor%}
+</div>
+</div>
+{% endblock%}
