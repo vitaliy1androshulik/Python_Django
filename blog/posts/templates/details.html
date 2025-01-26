@@ -1,13 +1,16 @@
 {% extends "layout.html" %}
+{% load static %}
 {% block title %}
     Детальніше
 {% endblock %}
 {% block content %}
 <div>
-    <h1>{{ post.title }}</h1>
-    <p>{{ post.content }}</p>
-    <p><strong>Автор:</strong> {{ post.created_by.first_name }} {{ post.created_by.last_name }}</p>
-    <p><small>Створено: {{ post.created_at }}</small></p>
-    <a href="{% url "posts:list" %}">Назад</a>
+    <a href="{% url "posts:list" %}"><i class="back bi bi-arrow-left "></i></a>
+    <h1 class="text-left">{{ post.title }}</h1>
+    <p class="text-left author"><strong>{{ post.created_by.first_name }} {{ post.created_by.last_name }}</strong> <small class="date">{{ post.date|date:"H:i, d.m.y " }}</small></p>
+    <hr class="text-left">
+    <p class="text-center" style="margin-top:25px;"><img src="/media/{{ post.img }}" class="card-img-top img-fluid" style="max-width: 925px;"></p>
+    <p class="text-left description">{{ post.body }}</p>  
 </div>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% endblock %}

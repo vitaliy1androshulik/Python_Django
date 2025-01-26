@@ -36,14 +36,14 @@ def delete_post(request, post_id=None):
 
 @login_required
 def edit_post(request, post_id):
-    post = get_object_or_404(Post, id=post_id)  # Отримуємо пост за ID
+    post = get_object_or_404(Post, id=post_id) 
 
     if request.method == 'POST':
-        form = forms.CreatePost(request.POST, instance=post)
+        form = forms.CreatePost(request.POST, request.FILES, instance=post)
         if form.is_valid():
-            form.save()  # Зберігаємо оновлення
-            return redirect('posts:list')  # Перенаправлення до деталей посту
+            form.save()  
+            return redirect('posts:list') 
     else:
-        form = forms.CreatePost(instance=post)  # Заповнюємо форму існуючими даними
+        form = forms.CreatePost(instance=post)
 
     return render(request, 'edit_post.html', {'form': form, 'post': post})

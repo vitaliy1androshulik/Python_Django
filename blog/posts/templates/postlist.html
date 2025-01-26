@@ -1,10 +1,11 @@
 {% extends "layout.html" %}
 {% block title%}
+{%load static%}
 Новини
 {% endblock%}
 {% block content%}
 <div class="container">
-  <h1 class="text-center">Список новин</h1>
+  <h1 class="text-center h1main">Список новин</h1>
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
 {%for x in post1%}
       <div class="col">
@@ -36,4 +37,5 @@
 {%endfor%}
 </div>
 </div>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% endblock%}
