@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block title %}
+    Детальніше
+{% endblock %}
+{% block content %}
+<div>
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content }}</p>
+    <p><strong>Автор:</strong> {{ post.created_by.first_name }} {{ post.created_by.last_name }}</p>
+    <p><small>Створено: {{ post.created_at }}</small></p>
+    <a href="{% url "posts:list" %}">Назад</a>
+</div>
+{% endblock %}
